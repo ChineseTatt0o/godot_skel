@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dnoxqla8hxoi0"]
+
+[ext_resource type="Texture2D" uid="uid://cw8xs2dy3cfoy" path="res://ART/fcf6c672615981370fd8948ad12b2387.jpg" id="1_22e2y"]
+[ext_resource type="Script" uid="uid://6jcrugs54aab" path="res://movingplateforme.gd" id="1_kol2q"]
+
+[sub_resource type="Curve2D" id="Curve2D_xhw6j"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -762, -2, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esw7m"]
+size = Vector2(560, 547)
+
+[sub_resource type="Animation" id="Animation_esw7m"]
+resource_name = "MOVEMENT"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_xhw6j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8glhr"]
+_data = {
+&"MOVEMENT": SubResource("Animation_esw7m"),
+&"RESET": SubResource("Animation_xhw6j")
+}
+
+[node name="Path2D" type="Path2D" unique_id=1542361943]
+position = Vector2(762, 2)
+curve = SubResource("Curve2D_xhw6j")
+script = ExtResource("1_kol2q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1964637504]
+position = Vector2(-762, -2)
+rotation = 0.0026246659
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=1351484936]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1160771723]
+position = Vector2(-737.4387, -1.9355346)
+rotation = 0.0026246656
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=875280185]
+position = Vector2(1, -2.5)
+shape = SubResource("RectangleShape2D_esw7m")
+
+[node name="platformer" type="Sprite2D" parent="AnimatableBody2D" unique_id=1425980805]
+texture_filter = 1
+position = Vector2(4.010376, 3.9894881)
+rotation = -0.002624666
+scale = Vector2(0.9239999, 0.8935999)
+texture = ExtResource("1_22e2y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=368025401]
+libraries/ = SubResource("AnimationLibrary_8glhr")

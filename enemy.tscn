@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ds7sgahtq8476"]
+
+[ext_resource type="PackedScene" uid="uid://b3yjcvpam54st" path="res://deathzone.tscn" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://bxeoi0ofymc5n" path="res://enemy.gd" id="1_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://bshmfchgex87" path="res://ART whitout BG/enemie-1.png.png" id="2_qi2p4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mej"]
+size = Vector2(24, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_srhsx"]
+radius = 67.18631
+
+[node name="enemy" type="CharacterBody2D" unique_id=713816601]
+scale = Vector2(9, 9)
+script = ExtResource("1_qi2p4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118396483]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_x7mej")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1341850696 groups=["t"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=907105624]
+shape = SubResource("CircleShape2D_srhsx")
+
+[node name="deathzone" parent="." unique_id=631476476 instance=ExtResource("1_4gyqm")]
+
+[node name="Enemie1_png" type="Sprite2D" parent="." unique_id=1014905635]
+texture_filter = 1
+scale = Vector2(1.858, 2)
+texture = ExtResource("2_qi2p4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

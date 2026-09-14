@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c8nn446lkynaa"]
+
+[ext_resource type="Script" uid="uid://b4u0t3wgu020t" path="res://dash.gd" id="1_tkrbt"]
+
+[node name="dash" type="Node2D" unique_id=917755311]
+script = ExtResource("1_tkrbt")
+
+[node name="dashTimer" type="Timer" parent="." unique_id=993713215]

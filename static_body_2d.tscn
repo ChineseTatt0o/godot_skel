@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgmtvk0oo41d4"]
+
+[ext_resource type="Texture2D" uid="uid://bdv02a1siyplp" path="res://ART whitout BG/e27fd66c48e4a1a0a4db773e8f7a69e4-removebg-preview.png" id="1_yjt17"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypqmy"]
+radius = 31.016125
+
+[node name="obstacle" type="StaticBody2D" unique_id=1975032449]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284638679]
+position = Vector2(58, 37)
+shape = SubResource("CircleShape2D_ypqmy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1191772995]
+position = Vector2(58, 33)
+scale = Vector2(0.14199999, 0.11573147)
+texture = ExtResource("1_yjt17")

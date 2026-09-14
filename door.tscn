@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cqmint8ldpgv8"]
+
+[ext_resource type="Texture2D" uid="uid://c6rcghts7p5w3" path="res://ART whitout BG/New Piskel (1).png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://kuqbwwaqubpf" path="res://door.gd" id="1_v6xrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(204, 349)
+
+[node name="nextlevel" type="Area2D" unique_id=1763815222]
+script = ExtResource("1_v6xrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=969337541]
+position = Vector2(2, -177.5)
+shape = SubResource("RectangleShape2D_v6xrn")
+
+[node name="door" type="Sprite2D" parent="." unique_id=435721009]
+texture_filter = 1
+position = Vector2(0, -209)
+texture = ExtResource("1_ba8gm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
