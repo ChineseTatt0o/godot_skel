@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cfd0hn1ax16o2" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cnlk3lserm3le" path="res://ART whitout BG/Screenshot_2026-08-03_171905-removebg-preview.png" id="3_hqtel"]
 [ext_resource type="Script" uid="uid://byoem3iqxs5cw" path="res://camera_2d.gd" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://dkabv8a10fnq6" path="res://ART whitout BG/ChatGPT_Image_Aug_3__2026__04_52_31_PM-removebg-preview.png" id="3_sweqy"]
-[ext_resource type="Texture2D" uid="uid://c88uvpcqc5f8q" path="res://ART whitout BG/ChatGPT_Image_Aug_3__2026__04_48_45_PM-removebg-preview (1).png" id="4_sweqy"]
-[ext_resource type="Texture2D" uid="uid://jjl0plbbkqc2" path="res://ART whitout BG/ChatGPT_Image_Aug_5__2026__09_45_09_AM-removebg-preview.png" id="6_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://dkabv8a10fnq6" path="res://ART whitout BG/Image_Aug_3__2026__04_52_31_PM-removebg-preview.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://c88uvpcqc5f8q" path="res://ART whitout BG/Image_Aug_3__2026__04_48_45_PM-removebg-preview (1).png" id="4_sweqy"]
+[ext_resource type="Texture2D" uid="uid://jjl0plbbkqc2" path="res://ART whitout BG/Image_Aug_5__2026__09_45_09_AM-removebg-preview.png" id="6_2hs0m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hs0m"]
 radius = 16.0
